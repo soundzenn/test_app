@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/widgets/custom_elevated_button.dart';
 
 class SelectorWidget extends StatefulWidget {
   final String label;
-  final String button1Text;
-  final String button2Text;
+  final String buttonTextOne;
+  final String buttonTextTwo;
+  final bool isSelectAddress;
+  final Function() callbackOne;
+  final Function() callbackTwo;
 
   const SelectorWidget({
     required this.label,
-    required this.button1Text,
-    required this.button2Text,
+    required this.buttonTextOne,
+    required this.buttonTextTwo,
+    required this.callbackOne,
+    required this.callbackTwo,
+    required this.isSelectAddress,
   });
 
   @override
@@ -25,19 +32,30 @@ class _SelectorWidgetState extends State<SelectorWidget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(widget.label),
+          SizedBox(
+            height: 15,
+          ),
           Row(
             children: [
               Expanded(
-                  child: ElevatedButton(
-                child: Text(widget.button1Text),
-                onPressed: () {},
-              )),
+                child: CustomElevatedButton(
+                  text: widget.buttonTextOne,
+                  onPressed: widget.callbackOne,
+                  color: widget.isSelectAddress
+                      ? Colors.grey
+                      : Color.fromRGBO(234, 86, 13, 1),
+                ),
+              ),
               SizedBox(width: 10),
               Expanded(
-                  child: ElevatedButton(
-                child: Text(widget.button2Text),
-                onPressed: () {},
-              )),
+                child: CustomElevatedButton(
+                  text: widget.buttonTextTwo,
+                  onPressed: widget.callbackTwo,
+                  color: widget.isSelectAddress
+                      ? Color.fromRGBO(234, 86, 13, 1)
+                      : Colors.grey,
+                ),
+              ),
             ],
           ),
         ],

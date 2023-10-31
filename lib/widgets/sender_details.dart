@@ -11,8 +11,6 @@ class SenderDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        LabeledDateField(label: 'Start Date'),
-        SizedBox(height: 15),
         // SelectorWidget(
         //   button1Text: 'Add address',
         //   button2Text: 'Select address',
