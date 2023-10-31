@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/widgets/date_selector.dart';
 import 'package:test_app/widgets/divider_widget.dart';
-import 'package:test_app/widgets/selector_widget.dart';
+// import 'package:test_app/widgets/selector_widget.dart';
 import 'package:test_app/widgets/textfield.dart';
 
 class RecipientAddress extends StatelessWidget {
@@ -11,13 +10,12 @@ class RecipientAddress extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        LabeledDateField(label: 'Start Date'),
         SizedBox(height: 15),
-        SelectorWidget(
-          button1Text: 'Add address',
-          button2Text: 'Select address',
-          label: 'Sender Details',
-        ),
+        // SelectorWidget(
+        //   button1Text: 'Add address',
+        //   button2Text: 'Select address',
+        //   label: 'Sender Details',
+        // ),
         LabeledTextField(
           label: 'Full name*',
           icon: Icon(Icons.person),
@@ -46,6 +44,5 @@ class RecipientAddress extends StatelessWidget {
         ),
       ],
     );
-    ;
   }
 }

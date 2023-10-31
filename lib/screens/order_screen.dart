@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/main.dart';
 import 'package:test_app/widgets/app_bar.dart';
 import 'package:test_app/widgets/date_selector.dart';
 import 'package:test_app/widgets/divider_widget.dart';
 import 'package:test_app/widgets/recipient_address.dart';
+import 'package:test_app/widgets/searchbar.dart';
 import 'package:test_app/widgets/selector_widget.dart';
 import 'package:test_app/widgets/sender_details.dart';
+import 'package:test_app/widgets/sender_info_button.dart';
 import 'package:test_app/widgets/textfield.dart';
 
 class OrderScreen extends StatefulWidget {
@@ -55,6 +58,11 @@ class _OrderScreenState extends State<OrderScreen> {
                       ),
                     ),
                   ),
+                  SelectorWidget(
+                    button1Text: 'Add address',
+                    button2Text: 'Select address',
+                    label: 'Sender Details',
+                  ),
                   SenderDetails(),
                   ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
@@ -81,6 +89,11 @@ class _OrderScreenState extends State<OrderScreen> {
                     hintText: '220069',
                   ),
                   SizedBox(height: 15),
+                  SelectorWidget(
+                    button1Text: 'Add address',
+                    button2Text: 'Select address',
+                    label: 'Recipient Address',
+                  ),
                   RecipientAddress(),
                   ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
@@ -116,6 +129,8 @@ class _OrderScreenState extends State<OrderScreen> {
                       )),
                     ),
                   ),
+                  AddressButton(),
+                  CustomSearchBar(),
                 ],
               ),
             )

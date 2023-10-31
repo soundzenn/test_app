@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SelectorWidget extends StatelessWidget {
+class SelectorWidget extends StatefulWidget {
   final String label;
   final String button1Text;
   final String button2Text;
@@ -12,6 +12,11 @@ class SelectorWidget extends StatelessWidget {
   });
 
   @override
+  State<SelectorWidget> createState() => _SelectorWidgetState();
+}
+
+class _SelectorWidgetState extends State<SelectorWidget> {
+  @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(20),
@@ -19,18 +24,18 @@ class SelectorWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(label),
+          Text(widget.label),
           Row(
             children: [
               Expanded(
                   child: ElevatedButton(
-                child: Text(button1Text),
+                child: Text(widget.button1Text),
                 onPressed: () {},
               )),
               SizedBox(width: 10),
               Expanded(
                   child: ElevatedButton(
-                child: Text(button2Text),
+                child: Text(widget.button2Text),
                 onPressed: () {},
               )),
             ],
