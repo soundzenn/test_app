@@ -188,9 +188,35 @@ class SelectAddressBody extends StatelessWidget {
     return Column(
       children: [
         CustomSearchBar(),
-        AddressButton(),
+        Container(
+          color: Colors.white,
+          child: AddressButton(),
+        ),
+        SelectorWidget(
+          isSelectAddress: false,
+          buttonTextOne: 'Add address',
+          buttonTextTwo: 'Select address',
+          label: 'Recipient Address',
+          callbackOne: () {},
+          callbackTwo: () {},
+        ),
         CustomSearchBar(),
-        RecepientButton()
+        Container(
+          color: Colors.white,
+          child: RecepientButton(),
+        ),
+        Container(
+          color: Colors.white,
+          child: Center(
+            child: CustomElevatedButton(
+              height: 50,
+              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              text: 'Next Step',
+              onPressed: () {},
+              color: Color.fromRGBO(234, 86, 13, 1),
+            ),
+          ),
+        ),
       ],
     );
   }
